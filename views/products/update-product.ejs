@@ -1,0 +1,53 @@
+<main id="main" class="main">
+  <section class="section">
+      <div class="row">
+          <div class="col-lg-8">
+
+            <div class="card">
+              <div class="card-body">
+                <h5 class="card-title"> Update Data Product</h5>
+                <% if (typeof errors != 'undefined') { %>
+                  <div
+                    class="alert alert-primary shadow p-3 mb-5 bg-body rounded"
+                    role="alert"
+                  >
+                    <ul>
+                      <% errors.forEach(error => { %>
+                      <li><%= error.msg %></li>
+                      <% }) %>
+                    </ul>
+                    <% } %>
+
+                  <form action="/data-product/update" method="post" class="row g-3">
+                    <div class="col-12">
+                      <label for="id_paket" class="form-label">ID Paket</label>
+                      <input type="text" class="form-control" id="id_paket" name="id_paket" value="<%= products.id_paket ? products.id_paket : '' %>" required readonly>
+                    </div>
+
+                    <div class="col-12">
+                      <label for="paket_bunga" class="form-label">Paket Bunga</label>
+                      <input type="text" class="form-control" id="paket_bunga"  name="paket_bunga" value="<%= products.paket_bunga ? products.paket_bunga : '' %>" required>
+                    </div>
+                    <div class="col-12">
+                      <label for="jmlh_stok" class="form-label">Jumlah Stok</label>
+                      <input type="text" class="form-control" id="jmlh_stok" name="jmlh_stok"  value="<%= products.jmlh_stok ? products.jmlh_stok : ''  %>"  required>
+                    </div>
+                    <div class="col-12">
+                      <label for="harga" class="form-label">Harga</label>
+                      <input type="text" class="form-control" id="harga"  name="harga"  value="<%= products.harga ? products.harga : '' %>" required>
+                    </div>
+                    <div class="text-center">
+                      <button type="submit" class="btn btn-primary">Kirim</button>
+                      <button type="reset" class="btn btn-warning">Reset</button>
+                      <a href="/data-product" class="btn btn-primary">Kembali</a>
+                    </div>
+
+                  </form> 
+                  <!-- Vertical Form -->
+
+                </div>
+              </div>
+          </div>
+        </div>
+      </section>
+</main>

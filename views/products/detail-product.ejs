@@ -1,0 +1,42 @@
+<main id="main" class="main">
+  <section class="section">
+    <div class="row">
+      <div class="col-lg-12">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">Detail</h5>
+            <table class="table table-hover">
+              <thead>
+                <tr>
+                  <th scope="col">No</th>
+                  <th scope="col">ID Paket</th>
+                  <th scope="col">Paket Bunga</th>
+                  <th scope="col">Jumlah Stok</th>
+                  <th scope="col">Harga</th>
+                </tr>
+              </thead>
+              <tbody>
+                <% if (product) { %>
+                <!-- Check if customer is defined -->
+                <tr>
+                  <td>1</td>
+                  <td><%= product.id_paket %></td>
+                  <td><%= product.paket_bunga %></td>
+                  <td><%= product.jmlh_stok %></td>
+                  <td><%= product.harga %></td>
+                </tr>
+                <% } else { %>
+                <!-- Handle case when customer is not defined -->
+                <tr>
+                  <td colspan="6">Product not found</td>
+                </tr>
+                <% } %>
+              </tbody>
+            </table>
+            <a href="/data-product" class="btn btn-primary">Kembali</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
